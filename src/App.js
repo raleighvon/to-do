@@ -24,6 +24,7 @@ class App extends Component {
     axios.post(`http://quip-todos.herokuapp.com/add_todo`, params)
     .then(function (response) {
       that.getTodos()
+      that.clearInput()
     })
     .catch(function (error) {
       console.log(error);
@@ -81,6 +82,10 @@ class App extends Component {
   handleClick = (data) => {
     data.completed = !data.completed
     this.completeTodo(this.serialize(data))
+  }
+
+  clearInput = () => {
+    this.state.task = "";
   }
 
   componentDidMount() {
