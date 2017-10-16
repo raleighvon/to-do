@@ -64,7 +64,7 @@ class App extends Component {
     var params = new URLSearchParams();
     params.append('email', 'example@gmail.com');
     params.append('text', task.text);
-    if (task.id) {
+    if (task.id !== null) {
       params.append('id', task.id);
     }
     params.append('completed', task.completed);
